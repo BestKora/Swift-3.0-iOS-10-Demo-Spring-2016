@@ -18,8 +18,6 @@ class TweetersTableViewController: CoreDataTableViewController
 {
     var mention: String? { didSet { updateUI() } }
     var managedObjectContext: NSManagedObjectContext? { didSet { updateUI() } }
-
- //   var resultsController: NSFetchedResultsController<TwitterUser>!
     
        private func updateUI() {
         if let context = managedObjectContext, let mentionString = mention, mentionString.characters.count > 0 {
