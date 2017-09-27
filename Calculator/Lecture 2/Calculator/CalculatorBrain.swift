@@ -2,7 +2,7 @@
 //  CalculatorBrain.swift
 //  Calculator
 //
-//  Created by Apollonian on 4/24/16.
+//  Created by Tatiana Kornilova on 5/7/16.
 //  Copyright © 2016 WWITDC. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ class CalculatorBrain{
     }
 
    private var operations : [String: Operation] = [
-        "π": Operation.constant(M_PI),
+        "π": Operation.constant(Double.pi),
         "e": Operation.constant(M_E),
         "±": Operation.unaryOperation({ -$0 }),
         "√": Operation.unaryOperation(sqrt),

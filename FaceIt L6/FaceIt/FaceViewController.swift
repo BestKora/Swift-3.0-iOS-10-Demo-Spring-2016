@@ -84,10 +84,10 @@ class FaceViewController: UIViewController
     func changeBrows(_ recognizer: UIRotationGestureRecognizer) {
         switch recognizer.state {
         case .changed,.ended:
-            if recognizer.rotation > CGFloat(M_PI/4) {
+            if recognizer.rotation > CGFloat(Double.pi/4) {
                 expression.eyeBrows = expression.eyeBrows.moreRelaxedBrow()
                 recognizer.rotation = 0.0
-            } else if recognizer.rotation < -CGFloat(M_PI/4) {
+            } else if recognizer.rotation < -CGFloat(Double.pi/4) {
                 expression.eyeBrows = expression.eyeBrows.moreFurrowedBrow()
                 recognizer.rotation = 0.0
             }

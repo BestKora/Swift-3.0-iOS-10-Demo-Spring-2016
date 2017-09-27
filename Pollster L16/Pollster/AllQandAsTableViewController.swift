@@ -59,8 +59,15 @@ class AllQandAsTableViewController: UITableViewController
             options: [.firesOnRecordCreation, .firesOnRecordDeletion]
         )
         // subscription.notificationInfo = ...
+        let notificationInfo = CKNotificationInfo()
+        notificationInfo.shouldSendContentAvailable = true
+        
+        // THIS LINE MAKES ALL THE DIFFERENCE:
+        notificationInfo.alertBody = "You've New Question!"
+        
+        subscription.notificationInfo = notificationInfo
         database.save(subscription, completionHandler: { (savedSubscription, error) in
-            if error?._code == CKError.serverRejectedRequest.rawValue {
+            if (error as NSError?)?.code == CKError.serverRejectedRequest.rawValue {
                 // ignore
             } else if error != nil {
                 // report

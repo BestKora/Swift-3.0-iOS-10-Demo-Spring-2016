@@ -105,7 +105,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     private func printDatabaseStatistics() {
          managedObjectContext?.perform({ 
            let results = try? self.managedObjectContext!.fetch(NSFetchRequest(entityName: "TwitterUser"))
-             print("\(results?.count) TwitterUsers")
+            print("\(String(describing: results?.count)) TwitterUsers")
             // a more efficient way to count objects ...
             let tweetCount = try! self.managedObjectContext!.count(for: NSFetchRequest(entityName: "Tweet"))
             print("\(tweetCount) Tweets")

@@ -82,7 +82,7 @@ class FaceViewController: UIViewController
     }
     
     private struct Animation {
-        static let ShakeAngle = CGFloat(M_PI/6)
+        static let ShakeAngle = CGFloat(Double.pi/6)
         static let ShakeDuration = 0.5
     }
     
@@ -124,10 +124,10 @@ class FaceViewController: UIViewController
     func changeBrows(_ recognizer: UIRotationGestureRecognizer) {
         switch recognizer.state {
         case .changed,.ended:
-            if recognizer.rotation > CGFloat(M_PI/4) {
+            if recognizer.rotation > CGFloat(Double.pi/4) {
                 expression.eyeBrows = expression.eyeBrows.moreRelaxedBrow()
                 recognizer.rotation = 0.0
-            } else if recognizer.rotation < -CGFloat(M_PI/4) {
+            } else if recognizer.rotation < -CGFloat(Double.pi/4) {
                 expression.eyeBrows = expression.eyeBrows.moreFurrowedBrow()
                 recognizer.rotation = 0.0
             }

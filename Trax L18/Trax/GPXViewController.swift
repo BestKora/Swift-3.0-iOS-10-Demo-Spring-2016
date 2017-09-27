@@ -30,7 +30,7 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gpxURL = URL(string: "http://cs193p.stanford.edu/Vacation.gpx")
+        gpxURL = URL(string: "http://bestkora.com/IosDeveloper/wp-content/uploads/2017/09/Vacation.gpx")//"http://www.clayjar.com/gc/temp/Louisiana.gpx")//"http://cs193p.stanford.edu/Vacation.gpx")
     }
     
     // MARK: Outlets
